@@ -16,6 +16,7 @@ public class MainGame : MonoBehaviour {
 	Player Bplayer3 = new Player();
 	Player Bplayer4 = new Player();
 	Player Bplayer5 = new Player();
+	Simulation Sim = new Simulation ();
 
 	Team team1 = new Team ("太原理工");
 	Team team2 = new Team ("清华大学");
@@ -201,26 +202,19 @@ public class MainGame : MonoBehaviour {
 
 
 		if (end != true) {
-			time = time - Random.Range(8,24);;
+			time = time - Random.Range (8, 24);
 			if (possession == true) {
-				int att = team1.pickAttackPlayer ();
-				if (team1.shoot (team1.players [att], team2.players [att]) == true) {
-					team1.score = team1.score + 2;
-					Debug.Log (team1.players [att].Name + "单打" + team2.players [att].Name + "得分，" +team1.Name+ team1.score + ":" + team2.Name+team2.score+"剩余时间"+time);
-				}
-				else
-					Debug.Log (team1.players [att].Name + "被" + team2.players [att].Name + "防下，" + team1.Name+ team1.score + ":" + team2.Name+team2.score+"剩余时间"+time);
-				possession = false;
-			} else {
-				int att = team2.pickAttackPlayer ();
-				if (team2.shoot (team1.players [att], team2.players [att]) == true) {
-					team2.score = team2.score + 2;
-					Debug.Log (team2.players [att].Name + "单打" + team1.players [att].Name + "得分，" + team1.Name+ team1.score + ":" + team2.Name+team2.score+"剩余时间"+time);
-				}
-				else
-					Debug.Log (team2.players [att].Name + "被" + team1.players [att].Name + "防下，" + team1.Name+ team1.score + ":" + team2.Name+team2.score+"剩余时间"+time);
-				possession = true;
+				bool re = Sim.attack (team1, team2, time);
+				if (re == true)
+					possession = false;
 			}
+
+			if (possession == false) {
+				bool re = Sim.attack (team2, team1, time);
+				if (re == true)
+					possession = true;
+			}
+
 			//Debug.Log (time);
 			//yield return new WaitForSeconds (1);
 			//action
