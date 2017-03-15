@@ -8,11 +8,15 @@ public class Simulation : MonoBehaviour {
 		//Debug.Log (a.shooting - b.defense);
 		int pick = pickAttackPlayer();
 		//Is it a steal?
-		//yes steal the ball, change possession,
+		//yes steal the ball, change possession, use rebound formula, defense/2 with dribble to see if steal
+		if (Steal(a.players [pick].dribble,b.players [pick].defense)) {
+			Debug.Log (b.players [pick].Name + "看破" + a.players [pick].Name + "的进攻，抢断得手" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + time);
+			return true;
+		}
 		//Not a steal
 
 
-		if (a.players[pick].shooting - b.players[pick].defense > Random.Range (0, 100)) {
+		if ((a.players[pick].shooting - b.players[pick].defense) > Random.Range (0, 100)) {
 			//add foul possibility 
 			a.score = a.score + 2;
 			Debug.Log (a.players [pick].Name + "单打" + b.players [pick].Name + "得分，" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + time);
@@ -20,6 +24,7 @@ public class Simulation : MonoBehaviour {
 		} 
 
 		else {
+			
 			Debug.Log (a.players [pick].Name + "被" + b.players [pick].Name + "防下，" + a.Name+ a.score + ":" + b.Name + b.score+"剩余时间"+time);
 			//Is it a block?
 			//yes block the shot, posession 0.6 a possession 0.4 b possession
@@ -78,6 +83,17 @@ public class Simulation : MonoBehaviour {
 		else
 			return false;
 	}
+
+	public bool Steal(int a,int b){
+		b = b * 8;
+		int ran = Random.Range(0,a+b);
+		if (ran <= a)
+			return true;
+		else
+			return false;
+
+	}
+
 
 	public Simulation ()
 	{

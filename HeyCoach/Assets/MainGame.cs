@@ -209,7 +209,7 @@ public class MainGame : MonoBehaviour {
 					possession = false;
 			}
 
-			if (possession == false) {
+			else {
 				bool re = Sim.attack (team2, team1, time);
 				if (re == true)
 					possession = true;
@@ -223,7 +223,9 @@ public class MainGame : MonoBehaviour {
 
 		if (time <= 0) {
 			end = true;
-			Debug.Log ("比赛结束！");
+			time = 600;
+			Debug.Log ("单节结束！");
+			return;
 		}
 	}
 }
