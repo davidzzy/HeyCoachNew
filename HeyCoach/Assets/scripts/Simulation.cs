@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Simulation {
-
-	public bool attack(Team a, Team b,int time, List<string> log_strings){
+	
+	public bool attack(Team a, Team b,int time, List<string> log_strings, GameState state){
 		//Debug.Log (a.shooting - b.defense);
 		int pick = pickAttackPlayer();
 		//Is it a steal?
@@ -14,6 +14,8 @@ public class Simulation {
 			string log_string = b.players [pick].Name + "看破" + a.players [pick].Name + "的进攻，抢断得手" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + time;
 			Debug.Log (log_string);
 			log_strings.Add (log_string);
+
+			state.possession = true;
 			return true;
 		}
 		//Not a steal
@@ -25,29 +27,61 @@ public class Simulation {
 			string log_string = a.players [pick].Name + "单打" + b.players [pick].Name + "得分，" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + time;
 			Debug.Log (log_string);
 			log_strings.Add (log_string);
+
+			state.possession = true;
 			return true;//possession changed
 		} 
 
 		else {
-			string log_string = a.players [pick].Name + "被" + b.players [pick].Name + "防下，" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + time;
-			Debug.Log (log_string);
-			log_strings.Add (log_string);
+			if (Block (a.players [pick].jumping, b.players [pick].defense)) {
+				string log_string_3 = b.players [pick].Name + "将" + a.players [pick].Name + "的投篮扇飞," + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + time;
+				Debug.Log (log_string_3);
+				log_strings.Add (log_string_3);
+				if (Random.Range (1, 10) < 5) {
+					string log_string_4 = b.Name + "得到球权";
+					Debug.Log (log_string_3);
+					log_strings.Add (log_string_3);
+
+					state.possession = true;
+					return true;
+				} else {
+					string log_string_4 = a.Name + "得到球权,继续进攻";
+					Debug.Log (log_string_4);
+					log_strings.Add (log_string_4);
+					//possession unchanged
+					state.possession = false;
+					return false;
+				}
+
+
+			}
 			//Is it a block?
 			//yes block the shot, posession 0.6 a possession 0.4 b possession
+
+
 			//no is it a foul? 0.1 possibility
 			//foul -- offesnive 0.2  off ball foul 0.4  shooting foul 0.4
 			//no foul rebound --  35 35 10 10 10 possibility, 
+
+			string log_string = a.players [pick].Name + "被" + b.players [pick].Name + "防下，" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + time;
+			Debug.Log (log_string);
+			log_strings.Add (log_string);
+
 			pick = pickReboundPlayer();
 			if (Rebound (a.players [pick].rebound, b.players [pick].rebound) == true) {
 				string log_string_1 = a.players [pick].Name + "在" + b.players [pick].Name + "头上怒摘进攻篮板，" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + time;
 				Debug.Log (log_string_1);
 				log_strings.Add (log_string_1);
+
+				state.possession = false;
 				return false;//possession unchanged
 			}
 			else {
 				string log_string_2 = b.players [pick].Name + "卡在" + a.players [pick].Name + "身前拿下防守篮板，" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + time;
 				Debug.Log (log_string_2);
 				log_strings.Add (log_string_2);
+
+				state.possession = true;
 				return true;
 			}
 		}
@@ -88,6 +122,15 @@ public class Simulation {
 	public bool Rebound(int a,int b){
 		a = a / 2;
 		int ran = Random.Range(0,a+b);
+		if (ran <= a)
+			return true;
+		else
+			return false;
+	}
+	// jumping b, defense a, 
+	public bool Block(int a,int b){
+		b = b * 20;
+		int ran = Random.Range (0, a + b);
 		if (ran <= a)
 			return true;
 		else

@@ -21,11 +21,12 @@ public class MainGame : MonoBehaviour {
 	Player Bplayer4 = new Player();
 	Player Bplayer5 = new Player();
 	Simulation Sim = new Simulation ();
+	GameState state = new GameState();
 
 	Team team1 = new Team ("太原理工");
 	Team team2 = new Team ("清华大学");
 	 int time;
-	 Random r = new Random ();
+	 //Random r = new Random ();
 	 bool end;
 	 bool possession; // true for a team to attack, false for b team to attack
 	// Use this for initialization
@@ -211,14 +212,14 @@ public class MainGame : MonoBehaviour {
 		if (end != true) {
 			time = time - Random.Range (8, 24);
 			if (possession == true) {
-				bool re = Sim.attack (team1, team2, time, log_strings);
-				if (re == true)
+				bool re = Sim.attack (team1, team2, time, log_strings,state);
+				if (state.possession == true)
 					possession = false;
 			}
 
 			else {
-				bool re = Sim.attack (team2, team1, time, log_strings);
-				if (re == true)
+				bool re = Sim.attack (team2, team1, time, log_strings,state);
+				if (state.possession == true)
 					possession = true;
 			}
 
