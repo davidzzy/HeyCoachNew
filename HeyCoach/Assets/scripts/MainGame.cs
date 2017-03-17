@@ -23,8 +23,8 @@ public class MainGame : MonoBehaviour {
 	Simulation Sim = new Simulation ();
 	GameState state = new GameState();
 
-	Team team1 = new Team ("太原理工");
-	Team team2 = new Team ("清华大学");
+	Team team1 = new Team ("开雾大讲堂");
+	Team team2 = new Team ("湘北");
 	 int time;
 	 //Random r = new Random ();
 	 bool end;
@@ -35,7 +35,7 @@ public class MainGame : MonoBehaviour {
 		text = gameObject.GetComponent<Text> ();
 		log_strings = new List<string> ();
 
-		Aplayer1.Name = "武正阳";
+		Aplayer1.Name = "大哥";
 		Aplayer1.strenth = 90;
 		Aplayer1.speed=90;
 		Aplayer1.strenth=90;
@@ -44,12 +44,13 @@ public class MainGame : MonoBehaviour {
 		Aplayer1.fitness=90;
 		Aplayer1.rebound=90;
 		Aplayer1.dribble=90;
-		Aplayer1.shooting=90;
+		Aplayer1.shooting=75;
 		Aplayer1.pass=90;
 		Aplayer1.defense=60;
 		Aplayer1.position = 1;
+		Aplayer1.foul = 0;
 
-		Aplayer2.Name = "朱真仪";
+		Aplayer2.Name = "马哥";
 		Aplayer2.strenth = 90;
 		Aplayer2.speed=90;
 		Aplayer2.strenth=90;
@@ -58,14 +59,14 @@ public class MainGame : MonoBehaviour {
 		Aplayer2.fitness=90;
 		Aplayer2.rebound=90;
 		Aplayer2.dribble=90;
-		Aplayer2.shooting=90;
+		Aplayer2.shooting=75;
 		Aplayer2.pass=90;
 		Aplayer2.defense=60;
 		Aplayer2.position = 2;
+		Aplayer2.foul = 0;
 
 
-
-		Aplayer3.Name = "乔丹";
+		Aplayer3.Name = "章鱼哥";
 		Aplayer3.strenth = 90;
 		Aplayer3.speed=90;
 		Aplayer3.strenth=90;
@@ -78,9 +79,10 @@ public class MainGame : MonoBehaviour {
 		Aplayer3.pass=90;
 		Aplayer3.defense=60;
 		Aplayer3.position = 3;
+		Aplayer3.foul = 0;
 
 
-		Aplayer4.Name = "王洪";
+		Aplayer4.Name = "鸭兄";
 		Aplayer4.strenth = 90;
 		Aplayer4.speed=90;
 		Aplayer4.strenth=90;
@@ -93,9 +95,10 @@ public class MainGame : MonoBehaviour {
 		Aplayer4.pass=90;
 		Aplayer4.defense=60;
 		Aplayer4.position = 4;
+		Aplayer4.foul = 0;
 
 
-		Aplayer5.Name = "保罗";
+		Aplayer5.Name = "少爷";
 		Aplayer5.strenth = 90;
 		Aplayer5.speed=90;
 		Aplayer5.strenth=90;
@@ -104,10 +107,12 @@ public class MainGame : MonoBehaviour {
 		Aplayer5.fitness=90;
 		Aplayer5.rebound=90;
 		Aplayer5.dribble=90;
-		Aplayer5.shooting=90;
+		Aplayer5.shooting=75;
 		Aplayer5.pass=90;
 		Aplayer5.defense=60;
 		Aplayer5.position = 5;
+		Aplayer5.foul = 0;
+
 
 		Bplayer1.Name = "赤木刚宪";
 		Bplayer1.strenth = 90;
@@ -118,10 +123,12 @@ public class MainGame : MonoBehaviour {
 		Bplayer1.fitness=90;
 		Bplayer1.rebound=90;
 		Bplayer1.dribble=90;
-		Bplayer1.shooting=90;
+		Bplayer1.shooting=75;
 		Bplayer1.pass=90;
 		Bplayer1.defense=60;
 		Bplayer1.position = 1;
+		Bplayer1.foul = 0;
+
 
 		Bplayer2.Name = "樱木花道";
 		Bplayer2.strenth = 90;
@@ -132,10 +139,11 @@ public class MainGame : MonoBehaviour {
 		Bplayer2.fitness=90;
 		Bplayer2.rebound=90;
 		Bplayer2.dribble=90;
-		Bplayer2.shooting=90;
+		Bplayer2.shooting=75;
 		Bplayer2.pass=90;
 		Bplayer2.defense=60;
 		Bplayer2.position = 2;
+		Bplayer2.foul = 0;
 
 
 
@@ -152,6 +160,7 @@ public class MainGame : MonoBehaviour {
 		Bplayer3.pass=90;
 		Bplayer3.defense=60;
 		Bplayer3.position = 3;
+		Bplayer3.foul = 0;
 
 
 		Bplayer4.Name = "三井寿";
@@ -167,6 +176,8 @@ public class MainGame : MonoBehaviour {
 		Bplayer4.pass=90;
 		Bplayer4.defense=60;
 		Bplayer4.position = 4;
+		Bplayer4.foul = 0;
+
 
 
 		Bplayer5.Name = "宫城良田";
@@ -178,10 +189,12 @@ public class MainGame : MonoBehaviour {
 		Bplayer5.fitness=90;
 		Bplayer5.rebound=90;
 		Bplayer5.dribble=90;
-		Bplayer5.shooting=90;
+		Bplayer5.shooting=75;
 		Bplayer5.pass=90;
 		Bplayer5.defense=60;
 		Bplayer5.position = 5;
+		Bplayer5.foul = 0;
+
 
 		team1.players[0] = Aplayer1;
 		team1.players[1] = Aplayer2;
@@ -196,7 +209,9 @@ public class MainGame : MonoBehaviour {
 		team2.players[4] = Bplayer5;
 
 		team1.score = 0;
-
+		team1.teamfoul = 0;
+		team2.score = 0;
+		team2.teamfoul = 0;
 		time = 600;
 		possession = true;
 		Debug.Log("GameStart");

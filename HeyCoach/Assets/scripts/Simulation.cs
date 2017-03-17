@@ -8,10 +8,11 @@ public class Simulation {
 	public bool attack(Team a, Team b,int time, List<string> log_strings, GameState state){
 		//Debug.Log (a.shooting - b.defense);
 		int pick = pickAttackPlayer();
+		string timer = Timer (time);
 		//Is it a steal?
 		//yes steal the ball, change possession, use rebound formula, defense/2 with dribble to see if steal
 		if (Steal(a.players [pick].dribble,b.players [pick].defense)) {
-			string log_string = b.players [pick].Name + "看破" + a.players [pick].Name + "的进攻，抢断得手" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + time;
+			string log_string = b.players [pick].Name + "看破" + a.players [pick].Name + "的进攻，抢断得手" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
 			Debug.Log (log_string);
 			log_strings.Add (log_string);
 
@@ -19,12 +20,61 @@ public class Simulation {
 			return true;
 		}
 		//Not a steal
+		//Is it a foul?
+		if (Random.Range (1, 10) == 1) { // 0.1 chance result in a foul
+			b.players[pick].foul++;
+			string log_string = b.players [pick].Name + "抢断" + a.players [pick].Name + "打手，" + b.players [pick].Name + b.players[pick].foul + "次犯规," +
+				a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
+			Debug.Log (log_string);
+			log_strings.Add (log_string);
 
+			state.possession = true;
+			return true;
+		}
 
-		if ((a.players[pick].shooting - b.players[pick].defense) > Random.Range (0, 100)) {
-			//add foul possibility 
+		//Is it a score?
+		if ((a.players[pick].shooting + a.players[pick].dribble - b.players[pick].defense*2) > Random.Range (0, 100)) {
+			//add shooting foul possibility 
+			if (pick > 2 && Random.Range (1, 10) <= 4) { //SF SG PG has 0.4 chance for a make 3
+				a.score = a.score + 3;
+				string log_string_5 = a.players [pick].Name + "面对" + b.players [pick].Name + "防守彪中三分，" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
+				if (Random.Range (1, 10) == 1) {
+					b.players[pick].foul++;
+					log_string_5 += "\n" + "同时造成对方犯规,"+ b.players [pick].Name + b.players[pick].foul + "次犯规,";
+					if (FreeThrow (a.players [pick].shooting) == 1) {
+						a.score++;
+						log_string_5 += "\n" + a.players [pick].Name + "加罚命中" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
+					} 
+					else {
+						log_string_5 += "\n" + a.players [pick].Name + "加罚不中" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
+					}
+						
+
+				}
+
+				Debug.Log (log_string_5);
+				log_strings.Add (log_string_5);
+
+				state.possession = true;
+				return true;
+			}
 			a.score = a.score + 2;
-			string log_string = a.players [pick].Name + "单打" + b.players [pick].Name + "得分，" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + time;
+			string log_string = a.players [pick].Name + "单打" + b.players [pick].Name + "得分，" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
+			if (Random.Range (1, 10) == 1) {
+				b.players[pick].foul++;
+				log_string += "\n" + "同时造成对方犯规,"+ b.players [pick].Name + b.players[pick].foul + "次犯规,";
+				if (FreeThrow (a.players [pick].shooting) == 1) {
+					a.score++;
+					log_string += "\n" + a.players [pick].Name + "加罚命中" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
+				} 
+				else {
+					log_string += "\n" + a.players [pick].Name + "加罚不中" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
+				}
+
+
+			}
+
+
 			Debug.Log (log_string);
 			log_strings.Add (log_string);
 
@@ -34,7 +84,7 @@ public class Simulation {
 
 		else {
 			if (Block (a.players [pick].jumping, b.players [pick].defense)) {
-				string log_string_3 = b.players [pick].Name + "将" + a.players [pick].Name + "的投篮扇飞," + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + time;
+				string log_string_3 = b.players [pick].Name + "将" + a.players [pick].Name + "的投篮扇飞," + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
 				Debug.Log (log_string_3);
 				log_strings.Add (log_string_3);
 				if (Random.Range (1, 10) < 5) {
@@ -58,18 +108,46 @@ public class Simulation {
 			//Is it a block?
 			//yes block the shot, posession 0.6 a possession 0.4 b possession
 
+			if (Random.Range (1, 10) == 1) {
+				b.players[pick].foul++;
+				string log_string_6 = b.players [pick].Name + "封盖" + a.players [pick].Name + "时打手，" + b.players [pick].Name + b.players[pick].foul + "次犯规," +
+					a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
+				if (FreeThrow (a.players [pick].shooting) == 1) {
+					a.score++;
+					log_string_6 += "\n" + a.players [pick].Name + "罚球命中" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
+				} 
+				else {
+					log_string_6 += "\n" + a.players [pick].Name + "罚球不中" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
+				}
+
+				if (FreeThrow (a.players [pick].shooting) == 1) {
+					a.score++;
+					log_string_6 += "\n" + a.players [pick].Name + "罚球命中" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
+				} 
+				else {
+					log_string_6 += "\n" + a.players [pick].Name + "罚球不中" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
+				}
+
+				Debug.Log (log_string_6);
+				log_strings.Add (log_string_6);
+
+				state.possession = true;
+				return true;
+
+			}
+
 
 			//no is it a foul? 0.1 possibility
-			//foul -- offesnive 0.2  off ball foul 0.4  shooting foul 0.4
+			//foul -- shooting foul 
 			//no foul rebound --  35 35 10 10 10 possibility, 
 
-			string log_string = a.players [pick].Name + "被" + b.players [pick].Name + "防下，" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + time;
+			string log_string = a.players [pick].Name + "被" + b.players [pick].Name + "防下，" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
 			Debug.Log (log_string);
 			log_strings.Add (log_string);
 
 			pick = pickReboundPlayer();
 			if (Rebound (a.players [pick].rebound, b.players [pick].rebound) == true) {
-				string log_string_1 = a.players [pick].Name + "在" + b.players [pick].Name + "头上怒摘进攻篮板，" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + time;
+				string log_string_1 = a.players [pick].Name + "在" + b.players [pick].Name + "头上怒摘进攻篮板，" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
 				Debug.Log (log_string_1);
 				log_strings.Add (log_string_1);
 
@@ -77,7 +155,7 @@ public class Simulation {
 				return false;//possession unchanged
 			}
 			else {
-				string log_string_2 = b.players [pick].Name + "卡在" + a.players [pick].Name + "身前拿下防守篮板，" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + time;
+				string log_string_2 = b.players [pick].Name + "卡在" + a.players [pick].Name + "身前拿下防守篮板，" + a.Name + a.score + ":" + b.Name + b.score + "剩余时间" + timer;
 				Debug.Log (log_string_2);
 				log_strings.Add (log_string_2);
 
@@ -85,6 +163,11 @@ public class Simulation {
 				return true;
 			}
 		}
+	}
+
+	public void checkFoul(){
+		//check if anyplayer fouled out, happen after attack method
+
 	}
 
 	public int pickAttackPlayer(){
@@ -147,6 +230,19 @@ public class Simulation {
 
 	}
 
+
+	public int FreeThrow(int a){
+		if (a > Random.Range (0, 100))
+			return 1;
+		return 0;
+	}
+
+	public string Timer(int timer){
+		int minutes = Mathf.FloorToInt(timer / 60F);
+		int seconds = Mathf.FloorToInt(timer - minutes * 60);
+		string niceTime = string.Format("{0:0}:{1:00}", minutes, seconds);
+		return niceTime;
+	}
 
 	public Simulation ()
 	{

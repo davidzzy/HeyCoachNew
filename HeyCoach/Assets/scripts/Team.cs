@@ -7,6 +7,7 @@ public class Team
 {
 	public string Name;
 	public int score;
+	public int teamfoul;
 	public Player player1 = new Player ();
 	public Player player2 = new Player ();
 	public Player player3 = new Player ();

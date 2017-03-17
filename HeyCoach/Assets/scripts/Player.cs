@@ -20,6 +20,8 @@ public class Player {
 
 	public string Name;
 	public int position;
+
+	public int foul;
 	// Use this for initialization
 	public Player ()
 	{
