@@ -11,6 +11,7 @@ public class Simulation {
 		string timer = Timer (time);
 		//Is it a steal?
 		//yes steal the ball, change possession, use rebound formula, defense/2 with dribble to see if steal
+		// change all Team a,b to state.teamA,
 		if (Steal(a.players [pick].dribble,b.players [pick].defense)) {
 			a.players [pick].turnovers++; a.players [pick].steals++;
 

@@ -9,8 +9,9 @@ public class GameState  {
 	public Team teamB;
 	public bool possession;
 
-	public GameState(){
-
+	public GameState(Team teamA, Team teamB){
+		this.teamA = teamA;
+		this.teamB = teamB;
 	}
 
 }

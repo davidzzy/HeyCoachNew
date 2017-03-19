@@ -4,7 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MainGame : MonoBehaviour {
-	Text text;
+	public GameObject logPanel;
+	public GameObject scorePanel;
+	public GameObject statsPanel;
+	Text logText;
+	Text scoreText;
+	Text statsText;
 	List<string> log_strings;
 
 	const int NUM_DISPLAY_LINES = 20;
@@ -21,7 +26,7 @@ public class MainGame : MonoBehaviour {
 	Player Bplayer4 = new Player();
 	Player Bplayer5 = new Player();
 	Simulation Sim = new Simulation ();
-	GameState state = new GameState();
+	GameState state;
 
 	Team team1 = new Team ("开雾大讲堂");
 	Team team2 = new Team ("湘北");
@@ -32,7 +37,9 @@ public class MainGame : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		text = gameObject.GetComponent<Text> ();
+		logText = logPanel.GetComponent<Text> ();
+		scoreText = scorePanel.GetComponent<Text> ();
+		statsText = statsPanel.GetComponent<Text> ();
 		log_strings = new List<string> ();
 
 		Aplayer1.Name = "大哥";
@@ -214,6 +221,7 @@ public class MainGame : MonoBehaviour {
 		team2.teamfoul = 0;
 		time = 600;
 		possession = true;
+		state = new GameState (team1, team2);
 		Debug.Log("GameStart");
 	}
 
@@ -227,27 +235,35 @@ public class MainGame : MonoBehaviour {
 		if (end != true) {
 			time = time - Random.Range (8, 24);
 			if (possession == true) {
-				bool re = Sim.attack (team1, team2, time, log_strings,state);
+				bool re = Sim.attack (state.teamA, state.teamB, time, log_strings,state);
 				if (state.possession == true)
 					possession = false;
 			}
 
 			else {
-				bool re = Sim.attack (team2, team1, time, log_strings,state);
+				bool re = Sim.attack (state.teamB, state.teamA, time, log_strings,state);
 				if (state.possession == true)
 					possession = true;
 			}
 
-			text.text = "";
-			for (int i = log_strings.Count - NUM_DISPLAY_LINES; i < log_strings.Count; i++) {
-				text.text += log_strings[i] + "\n";
+			logText.text = "";
+			for (int i = 0; i < log_strings.Count; i++) {
+				logText.text += log_strings[i] + "\n";
 			}
 
 			//Debug.Log (time);
 			//yield return new WaitForSeconds (1);
 			//action
 		}
+
+		scoreText.text = "Team 1: " + state.teamA.score + "  :  " + state.teamB.score + " :Team 2";
 			
+		statsText.text = "球员, 得分, 篮板, 助攻, 抢断, 盖帽, 失误, 犯规\n";
+		for(int i=0; i < 5;i++)
+			statsText.text += state.teamA.players[i].Name + " " + state.teamA.players[i].points + " " + state.teamA.players[i].rebounds + " " + state.teamA.players[i].assists + " " + state.teamA.players[i].steals + " " + state.teamA.players[i].blocks + " " + state.teamA.players[i].turnovers + " " + state.teamA.players[i].fouls + "\n";
+		statsText.text += "\n\n球员, 得分, 篮板, 助攻, 抢断, 盖帽, 失误, 犯规\n";
+		for(int i=0; i < 5;i++)
+			statsText.text += state.teamB.players[i].Name + " " + state.teamB.players[i].points + " " + state.teamB.players[i].rebounds + " " + state.teamB.players[i].assists + " " + state.teamB.players[i].steals + " " + state.teamB.players[i].blocks + " " + state.teamB.players[i].turnovers + " " + state.teamB.players[i].fouls + "\n";
 
 		if (time <= 0) {
 			end = true;
