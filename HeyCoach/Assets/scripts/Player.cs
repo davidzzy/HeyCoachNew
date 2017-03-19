@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player {
+	//attributes
 	public int speed;
 	public int strenth;
 	public int jumping;
@@ -21,7 +22,20 @@ public class Player {
 	public string Name;
 	public int position;
 
-	public int foul;
+
+
+
+	//in game stats
+
+	public int fouls;
+
+	public int points;
+	public int assists;
+	public int rebounds;
+	public int blocks;
+	public int steals;
+	public int turnovers;
+
 	// Use this for initialization
 	public Player ()
 	{
