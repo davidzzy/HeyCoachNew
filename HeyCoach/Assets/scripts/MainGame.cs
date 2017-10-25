@@ -36,93 +36,89 @@ public class MainGame : MonoBehaviour {
 	 bool possession; // true for a team to attack, false for b team to attack
 	// Use this for initialization
 	void Start () {
-
+		Debug.Log (PlayerGeneration.Center.Name);
 		logText = logPanel.GetComponent<Text> ();
 		scoreText = scorePanel.GetComponent<Text> ();
 		statsText = statsPanel.GetComponent<Text> ();
 		log_strings = new List<string> ();
 
-		Aplayer1.Name = "大哥";
-		Aplayer1.strenth = 90;
-		Aplayer1.speed=90;
-		Aplayer1.strenth=90;
-		Aplayer1.jumping=90;
-		Aplayer1.stamina=90;
-		Aplayer1.fitness=90;
-		Aplayer1.rebound=90;
-		Aplayer1.dribble=90;
-		Aplayer1.shooting=75;
-		Aplayer1.pass=60;
-		Aplayer1.defense=60;
-		Aplayer1.position = 1;
-		Aplayer1.fouls = 0;
+//		Aplayer1.Name = "大哥";
+//		Aplayer1.speed=90;
+//		Aplayer1.strenth=90;
+//		Aplayer1.jumping=90;
+//		Aplayer1.stamina=90;
+//		Aplayer1.fitness=90;
+//		Aplayer1.rebound=90;
+//		Aplayer1.dribble=90;
+//		Aplayer1.shooting=75;
+//		Aplayer1.pass=60;
+//		Aplayer1.defense=60;
+//		Aplayer1.position = 1;
+//		Aplayer1.fouls = 0;
+		Aplayer1 = PlayerGeneration.Center;
 
-		Aplayer2.Name = "马哥";
-		Aplayer2.strenth = 90;
-		Aplayer2.speed=90;
-		Aplayer2.strenth=90;
-		Aplayer2.jumping=90;
-		Aplayer2.stamina=90;
-		Aplayer2.fitness=90;
-		Aplayer2.rebound=90;
-		Aplayer2.dribble=90;
-		Aplayer2.shooting=75;
-		Aplayer2.pass=60;
-		Aplayer2.defense=60;
-		Aplayer2.position = 2;
-		Aplayer2.fouls = 0;
+//		Aplayer2.Name = "单神";
+//		Aplayer2.speed=90;
+//		Aplayer2.strenth=90;
+//		Aplayer2.jumping=90;
+//		Aplayer2.stamina=90;
+//		Aplayer2.fitness=90;
+//		Aplayer2.rebound=90;
+//		Aplayer2.dribble=90;
+//		Aplayer2.shooting=75;
+//		Aplayer2.pass=60;
+//		Aplayer2.defense=60;
+//		Aplayer2.position = 2;
+//		Aplayer2.fouls = 0;
+		Aplayer2 = PlayerGeneration.PowerForward;
 
+//		Aplayer3.Name = "大佬T";
+//		Aplayer3.speed=90;
+//		Aplayer3.strenth=90;
+//		Aplayer3.jumping=90;
+//		Aplayer3.stamina=90;
+//		Aplayer3.fitness=90;
+//		Aplayer3.rebound=90;
+//		Aplayer3.dribble=90;
+//		Aplayer3.shooting=90;
+//		Aplayer3.pass=60;
+//		Aplayer3.defense=60;
+//		Aplayer3.position = 3;
+//		Aplayer3.fouls = 0;
+		Aplayer3 = PlayerGeneration.SmallForward;
 
-		Aplayer3.Name = "章鱼哥";
-		Aplayer3.strenth = 90;
-		Aplayer3.speed=90;
-		Aplayer3.strenth=90;
-		Aplayer3.jumping=90;
-		Aplayer3.stamina=90;
-		Aplayer3.fitness=90;
-		Aplayer3.rebound=90;
-		Aplayer3.dribble=90;
-		Aplayer3.shooting=90;
-		Aplayer3.pass=60;
-		Aplayer3.defense=60;
-		Aplayer3.position = 3;
-		Aplayer3.fouls = 0;
+//		Aplayer4.Name = "阿博";
+//		Aplayer4.speed=90;
+//		Aplayer4.strenth=90;
+//		Aplayer4.jumping=90;
+//		Aplayer4.stamina=90;
+//		Aplayer4.fitness=90;
+//		Aplayer4.rebound=90;
+//		Aplayer4.dribble=90;
+//		Aplayer4.shooting=90;
+//		Aplayer4.pass=60;
+//		Aplayer4.defense=60;
+//		Aplayer4.position = 4;
+//		Aplayer4.fouls = 0;
+		Aplayer4 = PlayerGeneration.ShootingGuard;
 
-
-		Aplayer4.Name = "平哥";
-		Aplayer4.strenth = 90;
-		Aplayer4.speed=90;
-		Aplayer4.strenth=90;
-		Aplayer4.jumping=90;
-		Aplayer4.stamina=90;
-		Aplayer4.fitness=90;
-		Aplayer4.rebound=90;
-		Aplayer4.dribble=90;
-		Aplayer4.shooting=90;
-		Aplayer4.pass=60;
-		Aplayer4.defense=60;
-		Aplayer4.position = 4;
-		Aplayer4.fouls = 0;
-
-
-		Aplayer5.Name = "少爷";
-		Aplayer5.strenth = 90;
-		Aplayer5.speed=90;
-		Aplayer5.strenth=90;
-		Aplayer5.jumping=90;
-		Aplayer5.stamina=90;
-		Aplayer5.fitness=90;
-		Aplayer5.rebound=90;
-		Aplayer5.dribble=90;
-		Aplayer5.shooting=75;
-		Aplayer5.pass = 90;
-		Aplayer5.defense=60;
-		Aplayer5.position = 5;
-		Aplayer5.fouls = 0;
+//		Aplayer5.Name = "猪猪";
+//		Aplayer5.speed=90;
+//		Aplayer5.strenth=90;
+//		Aplayer5.jumping=90;
+//		Aplayer5.stamina=90;
+//		Aplayer5.fitness=90;
+//		Aplayer5.rebound=90;
+//		Aplayer5.dribble=90;
+//		Aplayer5.shooting=75;
+//		Aplayer5.pass = 90;
+//		Aplayer5.defense=60;
+//		Aplayer5.position = 5;
+//		Aplayer5.fouls = 0;
+		Aplayer5 = PlayerGeneration.PointGuard;
 
 
 		Bplayer1.Name = "赤木刚宪";
-		Bplayer1.strenth = 90;
 		Bplayer1.speed=90;
 		Bplayer1.strenth=90;
 		Bplayer1.jumping=90;
@@ -138,7 +134,6 @@ public class MainGame : MonoBehaviour {
 
 
 		Bplayer2.Name = "樱木花道";
-		Bplayer2.strenth = 90;
 		Bplayer2.speed=90;
 		Bplayer2.strenth=90;
 		Bplayer2.jumping=90;
@@ -155,7 +150,6 @@ public class MainGame : MonoBehaviour {
 
 
 		Bplayer3.Name = "流川枫";
-		Bplayer3.strenth = 90;
 		Bplayer3.speed=90;
 		Bplayer3.strenth=90;
 		Bplayer3.jumping=90;
@@ -171,7 +165,6 @@ public class MainGame : MonoBehaviour {
 
 
 		Bplayer4.Name = "三井寿";
-		Bplayer4.strenth = 90;
 		Bplayer4.speed=90;
 		Bplayer4.strenth=90;
 		Bplayer4.jumping=90;
@@ -188,7 +181,6 @@ public class MainGame : MonoBehaviour {
 
 
 		Bplayer5.Name = "宫城良田";
-		Bplayer5.strenth = 90;
 		Bplayer5.speed=90;
 		Bplayer5.strenth=90;
 		Bplayer5.jumping=90;

@@ -1,0 +1,266 @@
+Initialize engine version: 5.6.2f1 (a2913c821e27)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   22.21.13.8233
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\davidscz\github\github\HeyCoach\Alpha_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\davidscz\github\github\HeyCoach\Alpha_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\davidscz\github\github\HeyCoach\Alpha_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\davidscz\github\github\HeyCoach\Alpha_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\davidscz\github\github\HeyCoach\Alpha_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\davidscz\github\github\HeyCoach\Alpha_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\davidscz\github\github\HeyCoach\Alpha_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\davidscz\github\github\HeyCoach\Alpha_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.149 seconds
+Platform assembly: C:\Users\davidscz\github\github\HeyCoach\Alpha_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\davidscz\github\github\HeyCoach\Alpha_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.592681 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 12.197293 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 289.
+Total: 0.321449 ms (FindLiveObjects: 0.035247 ms CreateObjectMapping: 0.044587 ms MarkObjects: 0.223538 ms  DeleteObjects: 0.017172 ms)
+
+GameStart
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+大佬T被流川枫防下，开雾大讲堂0:湘北0剩余时间9:47
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+樱木花道卡在单神身前拿下防守篮板，开雾大讲堂0:湘北0剩余时间9:47
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+宫城良田送出一击秒传, 樱木花道面对单神命中两分，湘北2:开雾大讲堂0剩余时间9:29
+樱木花道得到2分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+宫城良田看破猪猪的进攻，抢断得手开雾大讲堂0:湘北2剩余时间9:21
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+赤木刚宪送出一击秒传, 流川枫面对大佬T命中两分，湘北4:开雾大讲堂0剩余时间9:05
+流川枫得到2分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+大佬T面对流川枫命中两分，开雾大讲堂2:湘北4剩余时间8:49
+大佬T得到2分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+阿博抢断三井寿打手，阿博1次犯规,湘北4:开雾大讲堂2剩余时间8:26
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+猪猪面对宫城良田防守彪中三分，开雾大讲堂5:湘北4剩余时间8:18
+猪猪得到3分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+三井寿面对阿博防守彪中三分，湘北7:开雾大讲堂5剩余时间8:08
+三井寿得到3分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+三井寿抢断阿博打手，三井寿1次犯规,开雾大讲堂5:湘北7剩余时间7:58
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+三井寿送出一击秒传, 赤木刚宪面对大哥命中两分，湘北9:开雾大讲堂5剩余时间7:41
+赤木刚宪得到2分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+樱木花道抢断单神打手，樱木花道1次犯规,开雾大讲堂5:湘北9剩余时间7:31
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+大佬T看破流川枫的进攻，抢断得手湘北9:开雾大讲堂5剩余时间7:15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+猪猪面对宫城良田防守彪中三分，开雾大讲堂8:湘北9剩余时间6:54
+猪猪得到6分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+樱木花道送出一击秒传, 三井寿面对阿博命中两分，湘北11:开雾大讲堂8剩余时间6:34
+三井寿得到5分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+猪猪送出一击秒传, 阿博面对三井寿命中两分，开雾大讲堂10:湘北11剩余时间6:16
+阿博得到2分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+樱木花道被单神防下，湘北11:开雾大讲堂10剩余时间5:54
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+三井寿在阿博头上怒摘进攻篮板，湘北11:开雾大讲堂10剩余时间5:54
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+宫城良田送出一击秒传, 三井寿面对阿博命中两分，湘北13:开雾大讲堂10剩余时间5:33
+三井寿得到7分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+大哥送出一击秒传, 大佬T面对流川枫命中两分，开雾大讲堂12:湘北13剩余时间5:23
+大佬T得到4分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+三井寿送出一击秒传, 赤木刚宪面对大哥命中两分，湘北15:开雾大讲堂12剩余时间5:08
+赤木刚宪得到4分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+大佬T被流川枫防下，开雾大讲堂12:湘北15剩余时间4:46
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+樱木花道卡在单神身前拿下防守篮板，开雾大讲堂12:湘北15剩余时间4:46
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+单神将樱木花道的投篮扇飞,湘北15:开雾大讲堂12剩余时间4:28
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+湘北得到球权,继续进攻
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+樱木花道被单神防下，湘北15:开雾大讲堂12剩余时间4:17
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+大哥卡在赤木刚宪身前拿下防守篮板，湘北15:开雾大讲堂12剩余时间4:17
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+三井寿将阿博的投篮扇飞,开雾大讲堂12:湘北15剩余时间4:04
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+三井寿将阿博的投篮扇飞,开雾大讲堂12:湘北15剩余时间4:04
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+流川枫被大佬T防下，湘北15:开雾大讲堂12剩余时间3:55
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+赤木刚宪在大哥头上怒摘进攻篮板，湘北15:开雾大讲堂12剩余时间3:55
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+阿博看破三井寿的进攻，抢断得手湘北15:开雾大讲堂12剩余时间3:33
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+大哥面对赤木刚宪命中两分，开雾大讲堂14:湘北15剩余时间3:24
+大哥得到2分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+流川枫被大佬T防下，湘北15:开雾大讲堂14剩余时间3:12
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+大哥卡在赤木刚宪身前拿下防守篮板，湘北15:开雾大讲堂14剩余时间3:12
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+三井寿抢断阿博打手，三井寿2次犯规,开雾大讲堂14:湘北15剩余时间3:01
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+三井寿面对阿博防守彪中三分，湘北18:开雾大讲堂14剩余时间2:47
+三井寿得到10分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+流川枫抢断大佬T打手，流川枫1次犯规,开雾大讲堂14:湘北18剩余时间2:28
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+赤木刚宪被大哥防下，湘北18:开雾大讲堂14剩余时间2:10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+大佬T卡在流川枫身前拿下防守篮板，湘北18:开雾大讲堂14剩余时间2:10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+猪猪被宫城良田防下，开雾大讲堂14:湘北18剩余时间1:53
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+樱木花道卡在单神身前拿下防守篮板，开雾大讲堂14:湘北18剩余时间1:53
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+三井寿面对阿博防守彪中三分，湘北21:开雾大讲堂14剩余时间1:31
+三井寿得到13分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+大哥面对赤木刚宪命中两分，开雾大讲堂16:湘北21剩余时间1:12
+大哥得到4分
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+流川枫被大佬T防下，湘北21:开雾大讲堂16剩余时间0:50
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+单神卡在樱木花道身前拿下防守篮板，湘北21:开雾大讲堂16剩余时间0:50
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+猪猪被宫城良田防下，开雾大讲堂16:湘北21剩余时间0:28
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+赤木刚宪卡在大哥身前拿下防守篮板，开雾大讲堂16:湘北21剩余时间0:28
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+单神看破樱木花道的进攻，抢断得手湘北21:开雾大讲堂16剩余时间0:07
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+猪猪被宫城良田防下，开雾大讲堂16:湘北21剩余时间-1:44
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+阿博在三井寿头上怒摘进攻篮板，开雾大讲堂16:湘北21剩余时间-1:44
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+单节结束！
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 6 worker threads for Enlighten.
+  Thread -> id: 3098 -> priority: 1 
+  Thread -> id: 2dc4 -> priority: 1 
+  Thread -> id: b54 -> priority: 1 
+  Thread -> id: 42c4 -> priority: 1 
+  Thread -> id: eec -> priority: 1 
+  Thread -> id: 3414 -> priority: 1 
